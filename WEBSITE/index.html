@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index Page</title>
+  <style>
+    @font-face {
+      font-family: 'StretchPro';
+      src: url('StretchPro.otf') format('opentype');
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'StretchPro', Arial, sans-serif;
+    }
+
+    .video-container {
+      position: fixed;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-text {
+      position: absolute;
+      top: 70%; /* Adjust the value to position the text */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'StretchPro', Arial, sans-serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+    }
+
+    .additional-text {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'StretchPro', Arial, sans-serif;
+      font-size: 24px;
+      color: #fff;
+      text-align: center;
+    }
+
+    #option-a-video {
+      left: 0;
+    }
+
+    #option-b-video {
+      right: 0;
+    }
+
+    /* Additional styles for the "Option A" and "Option B" buttons */
+
+    #option-a-button,
+    #option-b-button {
+      position: fixed;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #option-a-button a,
+    #option-b-button a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: none;
+      border: none;
+      color: #fff;
+      font-family: 'StretchPro', Arial, sans-serif;
+      font-size: 36px;
+      text-align: center;
+      text-decoration: none;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    @keyframes typing {
+      0% {
+        width: 0;
+      }
+      50% {
+        width: 100%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+    #option-a-button,
+    #option-b-button {
+      position: fixed;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #option-a-button {
+      left: 0;
+    }
+
+    #option-b-button {
+      right: 0;
+    }
+ </style>
+</head>
+<body>
+  <div class="video-container" id="option-a-video">
+    <video autoplay loop muted>
+      <source src="change.mp4" type="video/mp4">
+    </video>
+    <div class="video-text" id="option-a-text"></div>
+    <div class="additional-text">Check out the site</div>
+  </div>
+
+  <div class="video-container" id="option-b-video">
+    <video autoplay loop muted>
+      <source src="y4y.mp4" type="video/mp4">
+    </video>
+    <div class="video-text" id="option-b-text"></div>
+    <div class="additional-text">Listen to what we've made</div>
+  </div>
+
+  <div id="option-a-button">
+    <a href="home.html">HOME</a>
+  </div>
+
+  <div id="option-b-button">
+    <a href="demos.html">MY WORK</a>
+  </div>
+
+  <script>
+    window.onload = function() {
+      animateText('option-a-text', '');
+      animateText('option-b-text', '');
+    };
+
+    function animateText(elementId, newText) {
+      const element = document.getElementById(elementId);
+      let text = element.innerText;
+      let index = 0;
+      const typingInterval = 50; // Adjust typing speed here
+      const typingTimer = setInterval(() => {
+        if (index >= newText.length) {
+          clearInterval(typingTimer);
+        } else if (text.length > newText.length) {
+          text = text.slice(0, -1);
+          element.innerText = text;
+        } else {
+          text += newText[index];
+          element.innerText = text;
+          index++;
+        }
+      }, typingInterval);
+    }
+  </script>
+</body>
+</html>
