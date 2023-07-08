@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RobaireMusic - Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @font-face {
+      font-family: 'StretchPro';
+      src: url('StretchPro.otf') format('opentype');
+    }
+  
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'StretchPro', Arial, sans-serif;
+    }
+  
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+  
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+    }
+  
+    nav ul li {
+      display: inline;
+    }
+  
+    nav ul li a {
+      display: block;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+    }
+  
+    nav ul li a:hover {
+      background-color: #ffffff;
+    }
+  
+    main {
+      padding: 20px;
+    }
+  
+    section {
+      margin-bottom: 40px;
+    }
+  
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+  
+    /* Fade-in effect for specified text */
+    section.fade-in {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+  
+    section.fade-in.fade-in-active {
+      opacity: 1;
+    }
+    
+  </style>  
+</head>
+<body>
+  <div id="aaa">MENU</div>
+  <div id="panel">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#demos">Demos</a></li>
+      <li><a href="#myworks">My Works</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <header>
+    <div id="icon"></div>
+    <img src="bannerplaceholder.png" alt="Banner Image">
+    <h1>RobaireMusic</h1>
+  </header>
+
+   // add a nav here
+
+  <main>
+    <section id="home">
+      <h2>Welcome to RobaireMusic</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu nunc euismod, luctus nisl id, efficitur elit. Aliquam erat volutpat. Sed pharetra vestibulum consectetur.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu nunc euismod, luctus nisl id, efficitur elit. Aliquam erat volutpat. Sed pharetra vestibulum consectetur.</p>
+    </section>
+
+    <section id="services">
+      <h2>My Services</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu nunc euismod, luctus nisl id, efficitur elit. Aliquam erat volutpat. Sed pharetra vestibulum consectetur.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Robaire#8159</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 RobaireMusic. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Website</title>
+  <style>
+    #aaa {
+    position: fixed;
+    top: 20px;
+    left: 90px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 999;
+  }
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .loader-icon {
+      width: 80px; 
+      height: 80px;
+      background-image: url('paw_icon_135323.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      animation: spin 2s linear infinite;
+    }
+    .loader-text {
+      color: #fff;
+      font-size: 24px;
+      margin-top: 10px;
+      text-align: center;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  <script>
+    // code to show and hide the loading screen so i dont forget
+    document.addEventListener("DOMContentLoaded", function(event) {
+      const loader = document.querySelector(".loader");
+      loader.style.display = "flex";
+
+      const textElement = document.querySelector(".loader-text");
+      const text = "Welcome!";
+      const typingDelay = 100; 
+      const erasingDelay = 300; 
+      const newDelay = 1300;
+      let charIndex = 0;
+
+      function type() {
+        if (charIndex < text.length) {
+          textElement.textContent += text.charAt(charIndex);
+          charIndex++;
+          setTimeout(type, typingDelay);
+        } else {
+          setTimeout(erase, newDelay - erasingDelay);
+        }
+      }
+
+      function erase() {
+        if (charIndex > 0) {
+          textElement.textContent = text.slice(0, charIndex - 1);
+          charIndex--;
+          setTimeout(erase, erasingDelay);
+        } else {
+          loader.style.display = "none"; // Hide the loading screen
+        }
+      }
+
+      setTimeout(type, 1000);
+    });
+  </script>
+</head>
+<body>
+
+  <div class="loader">
+    <div class="loader-icon"></div>
+    <div class="loader-text"></div>
+  </div>
+
+  <button onclick="toggleLoadingScreen()">Toggle Loading Screen</button> // CHECK ON THIS
+</body>
+</html>
+<script>
+    // Function to check if an element is in the viewport
+    function isElementInViewport(element) {
+      var rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+  
+    // Function to handle the scroll event
+    function handleScroll() {
+      var sections = document.querySelectorAll('section.fade-in');
+      sections.forEach(function(section) {
+        if (isElementInViewport(section)) {
+          section.classList.add('fade-in-active');
+        }
+      });
+    }
+  
+    // Attach scroll event listener
+    window.addEventListener('scroll', handleScroll);
+  
+    // Initial check on page load
+    handleScroll();
+  </script>
+  
+
+

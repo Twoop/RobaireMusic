@@ -1,0 +1,214 @@
+.audio-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1px;
+  }  
+  
+.audio-wrapper:last-child {
+    margin-right: 0;  
+  }
+
+.genre-title {
+    text-align: center;
+  }
+    
+header {
+  background-image: url("file:///C:/Users/.exe/Downloads/banner-placeholder.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+header h1 {
+  color: #fff;
+  padding: 20px;
+}
+.genre-description {
+    text-align: center;
+  }
+#panel {
+    position: fixed;
+    top: 0;
+    left: -100%; /* im jumbo josh brah */
+    width: 300px; /* im jumbo josh brah */
+    height: 100vh;
+    background-color: #000;
+    transition: left 1s ease-in-out;
+    z-index: 9999;
+    background: linear-gradient(to right, #000000, #000000);
+  }
+  
+  #panel.open {
+    left: 0;
+  }
+  
+  /* Adjust the styles for the content within the panel */
+  #panel-content {
+    padding: 20px;
+  }
+  
+  #panel ul li a {
+    font-size: 20px; /* Adjust the font size as needed */
+    padding: 10px 20px; /* Adjust the padding as needed */
+  }
+@keyframes moveIcon {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  animation: moveIcon 4s infinite;
+  background-image: url('https://cdn.discordapp.com/attachments/1126655547429630013/1127048441663594576/image.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40px; 
+  height: 40px;
+}
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .loader-icon {
+    width: 500px; 
+    height: 500px; 
+    background-image: url('paw_icon_135323.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: spin 2s linear infinite;
+  }
+  
+  .loader-text {
+    color: #fff;
+    font-size: 36px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .hidden {
+    display: none;
+  }
+.zigzag-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .zigzag-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .zigzag-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  
+  .zigzag-item p,
+  .zigzag-item img {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .zigzag-item p {
+    background-color: #f2f2f2;
+  }
+  
+  .zigzag-item img {
+    max-width: 100%;
+  }
+  
+  body {
+    cursor: url(https://images-eds-ssl.xboxlive.com/image?url=rOOPPWX9ohGfLksSzq1Wig8iTZ05uPbeb.DpV4tdbbbWNm1XXu8uEEIOyHxIQzbkg6QV19S8ccQ3rJJvQNmSUjWGPrJ2xdsBXB0tu3QXTYir1QqCQaFq6boVafipW8dNYmXgbqOR2.PoENWIhB0PYahWrh5hGXnIZ.CXDPtZ_PNZawbC0Kp2ZHjvgMiONF4hvxv6cWCDbO3MX2YKmsdTFJSWe1yynb8kgGfhhqhpSrrfuBeuuHFr3FpVuAqgPnCILkISo0y2Jrgnpp7QqSYq0ipp8Zm5Uuf9n7O5469Fo0aP0ImfNqt1JQltoVNudk0N&format=source), auto;
+  }
+  
+audio {
+  }
+  
+  audio::-webkit-media-controls-progress-bar {
+    background-color: lightblue;
+  }
+  
+  audio::-webkit-media-controls-played-progress {
+    background-color: dodgerblue;
+  }
+body::-webkit-scrollbar {
+    width: 5px; /* Set the width of the scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Set the background color of the scrollbar track */
+    border-radius: 5px; /* Set the border radius of the scrollbar track */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #ffffff; /* Set the color of the scrollbar thumb */
+    border-radius: 5px; /* Set the border radius of the scrollbar thumb */
+  }
+  
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(0%);
+  }
+  20% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.loader-text {
+  animation: slideUp 5s forwards;
+}
+
+.loader-icon {
+  animation: slideUp 5s forwards;
+}
+
+.loader {
+  animation: slideDown 5s forwards;
+}
+.button-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 4s steps(40) forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
